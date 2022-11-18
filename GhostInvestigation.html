@@ -437,11 +437,6 @@
         ClearMatchingList();
         result = "";
         if(ele.value != ""){
-            document.querySelectorAll('.ghost').forEach((element) => {
-                console.log(`removing "matches"`);
-                element.classList.remove("matches");
-                element.classList.add("regularBackground");
-            })
             mGListLabel.textContent = `${document.querySelector(`label[for="${ele.getAttribute("name")}"`).textContent}: ${document.querySelector(`label[for="${ele.id}"]`).textContent}`;
             Array.from(document.querySelectorAll(`.ghost${ele.value}`)).filter((div) => div.style.display != "none").forEach((element) => {
                 console.log(`adding "matches" to ${element.id}`);
@@ -456,7 +451,14 @@
     function ClearMatchingList(){
         mGList.innerHTML = "";
         mGListLabel.textContent = "";
+        document.querySelectorAll('.ghost').forEach((element) => {
+            console.log(`removing "matches"`);
+            element.classList.remove("matches");
+            element.classList.add("regularBackground");
+        });
     }
+
+    
     
     ghostDivs.forEach((ele) => ele.classList.add("regularBackground"));
 
