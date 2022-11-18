@@ -1,0 +1,11 @@
+- 100 demon, onryo
+- 87.5 banshee
+- 80 yokai
+- 75 Thaye
+- 65 raiju
+- 60 mare, onryo(without candles)
+- 50
+- 40 mare
+- 35 Shade
+- 12.5 banshee
+- san100 san87_5 san80 san75 san65 san60 san50 san40 san35 san12_5

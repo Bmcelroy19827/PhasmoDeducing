@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ghost Investigation</title>
+    <style>
+        #ghosts{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        #ghosts div{
+            border: 3px dashed blue;
+            margin: 2px;
+            padding: 3px;
+            background-color: lightgrey;
+            width: 17%;
+        }
+        #clues{
+            display: flex;
+            flex-direction: row;
+        }
+        #clues > div{
+            border: 2px solid red;
+            margin: 2px;
+            padding: 3px;
+            background-color: blueviolet;
+        }
+        .grid-container{
+            display: grid;
+            grid-template-columns: auto auto;
+        }
+        .centerText{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="clues">
+        <div id="standardClues">
+            <div>
+                <label>
+                    <input type="checkbox" value=".fingerprints" name="clues"/>
+                    Fingerprints
+                    <span></span>
+                </label>
+            </div>
+            <div>
+                <label>
+                    <input type="checkbox" value=".dots" name="clues"/>
+                    D.O.T.S Projector
+                    <span></span>
+                </label>
+            </div>
+            <div>
+                <label>
+                    <input type="checkbox" value=".freezingTemps" name="clues" />
+                    Freezing Temps
+                    <span></span>
+                </label>
+            </div>
+            <div>
+                <label>
+                    <input type="checkbox" value=".orbs" name="clues" />
+                    Ghost Orbs
+                    <span></span>
+                </label>
+            </div>
+            <div>
+                <label>
+                    <input type="checkbox" value=".writing" name="clues" />
+                    Ghost Writing
+                    <span></span>
+                </label>
+            </div>
+            <div>
+                <label>
+                    <input type="checkbox" value=".emf5" name="clues" />
+                    EMF Level 5
+                    <span></span>
+                </label>
+            </div>
+            <div>
+                <label>
+                    <input type="checkbox" value=".spiritbox" name="clues" />
+                    Spirit Box
+                    <span></span>
+                </label>
+            </div>
+
+        </div>
+        <div id="huntingSpeedClues">
+            <div class="centerText"><label>Ghost Speed</label></div>
+            <div class="grid-container">
+                <div class="grid-item"><label>Fast </label></div><div class="grid-item"><input type="radio" name="clues" value=".fastRun" /><label></label></div>
+                <div class="grid-item"><label>Slow </label></div><div class="grid-item"><input type="radio" name="clues" value=".slowRun" /><label></label></div>
+                <div class="grid-item"><label>Variable</label></div><div class="grid-item"><input type="radio" name="clues" value=".variableRun"/><label></label></div>
+                <div class="grid-item"><label class="halfW">Normal </label></div><div class="grid-item"><input type="radio" name="clues" value=".normalRun" /><label></label></div>
+            </div>
+        </div>
+        <div id="huntingSanityClues">
+            <div class="centerText"><label>Sanity When Hunted</label></div>
+            <div class="grid-container">
+                <div class="grid-item"><label>87.6 ~ 100</label></div>
+                <div class="grid-item"><input type="radio" name="sanityClues" value=".san100" /><label></label></div>
+
+                <div class="grid-item"><label>81 ~ 87.5</label></div>
+                <div class="grid-item"><input type="radio" name="sanityClues" value=".san87_5" /><label></label></div>
+
+                <div class="grid-item"><label>76 ~ 80</label></div>
+                <div class="grid-item"><input type="radio" name="sanityClues" value=".san80" /><label></label></div>
+
+                <div class="grid-item"><label>66 ~ 75 </label></div>
+                <div class="grid-item"><input type="radio" name="sanityClues" value=".san75" /><label></label></div>
+
+                <div class="grid-item"><label>61 ~ 65</label></div>
+                <div class="grid-item"><input type="radio" name="sanityClues" value=".san65" /><label></label></div>
+
+                <div class="grid-item"><label>51 ~ 60</label></div>
+                <div class="grid-item"><input type="radio" name="sanityClues" value=".san60" /><label></label></div>
+
+                <div class="grid-item"><label>41 ~ 50</label></div>
+                <div class="grid-item"><input type="radio" name="sanityClues" value=".san50" /><label></label></div>
+
+                <div class="grid-item"><label>36 ~ 40 </label></div>
+                <div class="grid-item"><input type="radio" name="sanityClues" value=".san40" /><label></label></div>
+
+                <div class="grid-item"><label>12.6 ~ 35 </label></div>
+                <div class="grid-item"><input type="radio" name="sanityClues" value=".san35" /><label></label></div>
+
+                <div class="grid-item"><label>0 ~ 12.5</label></div>
+                <div class="grid-item"><input type="radio" name="sanityClues" value=".san12_5" /><label></label></div>
+            </div>
+        </div>
+    </div>
+    <div id="ghosts">
+        <div id="bansheeDiv" class="dots orbs fingerprints normalRun san87_5 san80 san75 san65 san60 san50 san40 san35 san12_5">
+            <label>Banshee</label>
+            <ul>
+                <li><label>DOTS</label></li>
+                <li><label>Ghost Orbs</label></li>
+                <li><label>Fingerprints</label></li>
+                <li><label>87.5 - 12.5 hunt - uses target's sanity, not the team average</label></li>                
+            </ul>
+        </div>
+        <div id="demonDiv" class="writing freezingTemps fingerprints normalRun san100 san87_5 san80 san75 san65 san60 san50 san40 san35 san12_5">
+            <label>Demon</label>
+            <ul>
+                <li><label>Ghost Writing</label></li>
+                <li><label>Freezing Temps</label></li>
+                <li><label>Fingerprints</label></li>
+                <li><label>any sanity hunt</label></li>
+                <li><label>smudge 60seconds (90 is standard)</label></li>
+                <li><label>hunt cooldown 20 seconds (25 seconds is standard)</label></li>            
+            </ul>
+        </div>
+        <div id="deogenDiv" class="dots writing spiritbox variableRun fastRun slowRun san50 san40 san35 san12_5">
+            <label>Deogen</label>
+            <ul>
+                <li><label>Spirit Box: Forced</label></li>
+                <li><label>DOTS</label></li>
+                <li><label>Ghost Writing</label></li>
+                <li><label>Ghost is really fast when far away and extremely slow when it gets close: Will always find its victim</label></li>
+            </ul>
+        </div>
+        <div id="hantuDiv" class="orbs fingerprints freezingTemps variableRun slowRun fastRun san50 san40 san35 san12_5">
+            <label>Hantu</label>
+            <ul>
+                <li><label>Freezing Temps: Forced</label></li>
+                <li><label>Ghost Orbs</label></li>
+                <li><label>Fingerprints</label></li>
+                <li><label>Faster in colder climates (when fusebox is off) and does not gain speed when it has line of sight to a player</label></li>
+            </ul>
+        </div>
+        <div id="goryoDiv" class="dots emf5 fingerprints normalRun san50 san40 san35 san12_5">
+            <label>Goryo</label>
+            <ul>
+                <li><label>Dots: Forced</label></li>
+                <li><label>Dots only seen through video camera and only when a player is not in the ghost room</label></li>
+                <li><label>EMF 5</label></li>
+                <li><label>Fingerprints</label></li>
+            </ul>                      
+        </div>
+        <div id="jinnDiv" class="fingerprints emf5 freezingTemps variableRun fastRun normalRun san50 san40 san35 san12_5">
+            <label>Jinn</label>
+            <ul>
+                <li><label>Fingerprints</label></li>
+                <li><label>EMF 5</label></li>
+                <li><label>Freezing Temps</label></li>
+                <li><label>EMF 2-5 at fusebox when it uses its ability (speed up or drain 25% sanity)</label></li>
+                <li><label>If Jinn gains line of sight and fusebox is turned on it can gain speed until withint 3 meteres of the player</label></li>
+            </ul>
+        </div>
+        <div id="mareDiv" class="orbs writing spiritbox normalRun san60 san50 san40 san35 san12_5">
+            <label>Mare</label>
+            <ul>
+                <li><label>Ghost Orbs</label></li>
+                <li><label>Ghost Writing</label></li>
+                <li><label>Spirit Box</label></li>
+                <li><label>May instantly turn off a light/tv/computer after a player turns it on (can't spam on/off)</label></li>
+                <li><label>hunt san: ghost room lit-40%, ghost room dark-60%</label></li>
+                
+            </ul>
+        </div>
+        <div id="moroiDiv" class="writing freezingTemps spiritbox variableRun normalRun fastRun san50 san40 san35 san12_5">
+            <label>Moroi</label>
+            <ul>
+                <li>Spirit Box: Forced</li>
+                <li><label>Ghost Writing</label></li>
+                <li><label>Freezing Temps</label></li>
+                <li><label>Curses players, doubling the sanity drain rate</label></li>
+                <li><label>Gets faster as the average sanity goes below 45%</label></li>
+            </ul>
+        </div>
+        <div id="mylingDiv" class="writing emf5 fingerprints normalRun san50 san40 san35 san12_5">
+            <label>Myling</label>
+            <ul>
+                <li><label>Ghost Writing</label></li>
+                <li><label>EMF 5</label></li>
+                <li><label>Fingerprints</label></li>
+            </ul>
+        </div>
+        <div id="obakeDiv" class="fingerprints emf5 orbs normalRun san50 san40 san35 san12_5">
+            <label>Obake</label>
+            <ul>
+                <li><label>FingerPrints: Forced</label></li>
+                <li><label>EMF 5</label></li>
+                <li><label>Orbs</label></li>
+                <li><label>Special 6 fingered fingerprint (2 fingers on light switch)</label></li>
+                <li><label>75% chance to leave fingerprints</label></li>
+            </ul>           
+        </div>
+        <div id="oniDiv" class="dots emf5 freezingTemps normalRun san50 san40 san35 san12_5">
+            <label>Oni</label>
+            <ul>
+                <li><label>DOTS</label></li>
+                <li><label>EMF 5</label></li>
+                <li><label>Freezing Temps</label></li>
+                <li><label>Flashes visible longer than other ghosts during hunts</label></li>
+            </ul>
+        </div>
+        <div id="onryoDiv" class="orbs freezingTemps spiritbox normalRun san100 san87_5 san80 san75 san65 san60 san50 san40 san35 san12_5">
+            <label>Onryo</label>
+            <ul>
+                <li><label>Ghost Orbs</label></li>
+                <li><label>Freezing Temps</label></li>
+                <li><label>Spirit Box</label></li>
+                <li><label>Multiple candles act as crucifix (will blow out a candle before using a crucifix)</label></li>
+                <li><label>Every third candle blown out will cause the ghost to attempt a hunt</label></li>
+                <li><label>sanity 60% if not using candles (base is 50%)</label></li>
+                
+            </ul>
+        </div>
+        <div id="phantomDiv" class="dots fingerprints spiritbox normalRun san50 san40 san35 san12_5">
+            <label>Phantom</label>
+            <ul>
+                <li><label>DOTS</label></li>
+                <li><label>Fingerprints</label></li>
+                <li><label>Spirit Box</label></li>
+                <li><label>Invisible in photos</label></li>
+                <li><label>During a hunt it is invisible more often (flicker is 1-2 seconds compared to 0.3-1 second base)</label></li>
+            </ul>
+        </div>
+        <div id="poltergeistDiv" class="fingerprints writing spiritbox normalRun san50 san40 san35 san12_5">
+            <label>Poltergeist</label>
+            <ul>
+                <li><label>Fingerprints</label></li>
+                <li><label>Ghost Writing</label></li>
+                <li><label>Spirit Box</label></li>
+                <li><label>Thrown items lower sanity whether the player sees it or not</label></li>
+            </ul>
+        </div>
+        <div id="raijuDiv" class="dots orbs emf5 variableRun fastRun san65 san60 san50 san40 san35 san12_5">
+            <label>Raiju</label>
+            <ul>
+                <li><label>DOTS</label></li>
+                <li><label>Ghost Orbs</label></li>
+                <li><label>EMF 5</label></li>
+                <li><label>If near electrical equipment during hunt its speed is increased to 2.5m/s</label></li>
+                <li><label>If near one piece of active electrical equipment sanity threshold is 65%. Otherwise normal 50%</label></li>
+            </ul>
+        </div>
+        <div id="revenantDiv" class="orbs writing freezingTemps variableRun slowRun fastRun san50 san40 san35 san12_5">
+            <label>Revenant</label>
+            <ul>
+                <li><label>Ghost Orbs</label></li>
+                <li><label>Ghost Writing</label></li>
+                <li><label>Freezing Temps</label></li>
+                <li><label>Hunting: Slow(1 m/s) if not line of sight and almost double normal speed (3 m/s - triple its own non-LOS speed) when it has line of sight</label></li>
+            </ul>
+        </div>
+        <div id="shadeDiv" class="writing emf5 freezingTemps normalRun san35 san12_5">
+            <label>Shade</label>
+            <ul>
+                <li><label>Ghost Writing</label></li>
+                <li><label>EMF 5</label></li>
+                <li><label>Freezing Temps</label></li>
+                <li><label>sanity threshold 35%</label></li>
+                
+            </ul>
+        </div>
+        <div id="spiritDiv" class="writing emf5 spiritbox normalRun san50 san40 san35 san12_5">
+            <label>Spirit</label>
+            <ul>
+                <li><label>Ghost Writing</label></li>
+                <li><label>EMF 5</label></li>
+                <li><label>Spirit Box</label></li>
+                <li><label>Smudge last 180seconds (before hunt)</label></li>
+            </ul>
+        </div>
+        <div id="thayeDiv" class="dots orbs writing variableRun fastRun slowRun normalRun san75 san65 san60 san50 san40 san35 san12_5">
+            <label>Thaye</label>
+            <ul>
+                <li><label>DOTS</label></li>
+                <li><label>Ghost Orbs</label></li>
+                <li><label>Ghost Writing</label></li>
+                <li><label>Hunt speed slows over time - starting fast (2.75 m/s) and slowing down to 1 m/s</label></li>
+                <li><label>Hunt Sanity threshold starts at 75% and lowers by 6% each age step (up to 10 a contract every 1-2 minutes) down to a 15% threshold</label></li>
+                <li><label>Does not speed up with LOS to player</label></li>
+            </ul>
+        </div>
+        <div id="mimicDiv" class="orbs fingerprints freezingTemps spiritbox variableRun normalRun slowRun fastRun san100 san87_5 san80 san75 san65 san60 san50 san40 san35 san12_5">
+            <label>Mimic</label>
+            <ul>
+                <li><label>Orbs: Forced, false evidence (always present even in no-evidence run)</label></li>
+                <li><label>Fingerprints</label></li>
+                <li><label>Freezing Temps</label></li>
+                <li><label>Spirit Box</label></li>
+                <li><label>Can copy evidences as long as it leaves them itself (it can leave obake looking fingerprints)</label></li>
+                <li><label>hunting threshold dependent on what it's mimicking</label></li>                
+            </ul>
+        </div>
+        <div id="twinsDiv" class="emf5 freezingTemps spiritbox variableRun slowRun fastRun san50 san40 san35 san12_5">
+            <label>Twins</label>
+            <ul>
+                <li><label>EMF 5</label></li>
+                <li><label>Freezing Temps</label></li>
+                <li><label>Spirit Box</label></li>
+                <li><label>Hunt speed depends on if the ghost starts from present location or near the last interaction it had when it used its ability. Slight difference in speeds (1.5 vs 1.9)</label></li>
+            </ul>
+        </div>
+        <div id="wraithDiv" class="dots emf5 spiritbox normalRun san50 san40 san35 san12_5">
+            <label>Wraith</label>
+            <ul>
+                <li><label>DOTS</label></li>
+                <li><label>EMF 5</label></li>
+                <li><label>Spirit Box</label></li>
+                <li><label>Pic of salt footprints will not be labeled "footprints" in journal</label></li>
+                <li><label>May teleport within 3 meters of a random player, generating EMF 2 with a 25% of EMF 5 at the location it teleported</label></li>
+            </ul>
+        </div>
+        <div id="yokaiDiv" class="dots orbs spiritbox normalRun san80 san75 san65 san60 san50 san40 san35 san12_5">
+            <label>Yokai</label>
+            <ul>
+                <li><label>DOTS</label></li>
+                <li><label>Ghost Orbs</label></li>
+                <li><label>Spirit Box</label></li>
+                <li><label>If a player talks or makes significant noise close then the hunt sanity threshold is increased to 80%, otherwise 50%</label></li>
+                <li><label>During hunts can only hear players or sense handheld active electronics withint 2.5 meters (can stand in different room with doors closed and it will not sense you)</label></li>
+            </ul>
+        </div>
+        <div id="yureiDiv" class="dots orbs freezingTemps normalRun san50 san40 san35 san12_5">
+            <label>Yurei</label>
+            <ul>
+                <li><label>DOTS</label></li>
+                <li><label>Ghost Orbs</label></li>
+                <li><label>Freezing Temps</label></li>
+                <li><label>Only ghost that can fully shut an exit door without a ghost event or hunt</label></li>
+                <li><label>Players within 7.5 meters will have their sanity drained by 15%</label></li>
+            </ul>
+        </div>
+    </div>
+</body>
+<script>
+    function CheckEvidence(){
+        let evidencecbList = Array.from(document.querySelectorAll('input[name="clues"]:checked'));
+        evidencecbList.push(...Array.from(document.querySelectorAll('input[name="sanityClues"]:checked')));
+        let evidenceClassList = "";
+        evidencecbList.map((ele) => evidenceClassList += ele.value);
+        console.log(`EvidenceList: ${evidenceClassList}`);
+        //Hide Invalid Ghosts
+        if(evidenceClassList != null && evidenceClassList != ""){
+            document.querySelectorAll(evidenceClassList).forEach((ele) => {
+                ele.style.display = "block";
+            });
+            Array.from(document.querySelectorAll('div#ghosts div')).filter((ele) => !ele.matches(evidenceClassList)).forEach((element) => {
+                element.style.display = "none";
+            });
+        }
+        else{
+            document.querySelectorAll('div#ghosts div').forEach((ele) => {
+                ele.style.display = "block";
+            });
+        }
+        DisplayEvidenceCounts();
+    }
+
+    function DisplayEvidenceCounts(){
+        let cbxes = Array.from(document.querySelectorAll('input[name="clues"]'));
+        cbxes.push(...Array.from(document.querySelectorAll('input[name="sanityClues"]')));
+        cbxes.forEach( (cbx) => {
+            let ghostCount = Array.from(document.querySelectorAll(cbx.value)).filter((ele) => ele.style.display != "none").length;
+            cbx.nextElementSibling.textContent = `: ${ghostCount} Ghosts`;
+        });
+    }
+    let clues = Array.from(document.querySelectorAll('input[name="clues"]'));
+    clues.push(...Array.from(document.querySelectorAll('input[name="sanityClues"]')));
+    clues.forEach((ele) => {
+        ele.addEventListener('change', CheckEvidence);
+    });
+
+    CheckEvidence();
+</script>
+</html>
