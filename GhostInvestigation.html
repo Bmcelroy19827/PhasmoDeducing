@@ -15,7 +15,6 @@
             border: 3px dashed blue;
             margin: 2px;
             padding: 3px;
-            background-color: lightgrey;
             width: 17%;
         }
         #clues{
@@ -35,56 +34,65 @@
         .centerText{
             text-align: center;
         }
+        .regularBackground{
+            background-color: lightgrey;
+        }
+        .matches{
+            background-color: cadetblue;
+        }
     </style>
 </head>
 <body>
     <div id="clues">
         <div id="standardClues">
+            <div class="centerText">
+                <label for="clues">Standard Clues</label>
+            </div>
             <div>
-                <label>
-                    <input type="checkbox" value=".fingerprints" name="clues"/>
+                <label for="fingerprintsCbx">
+                    <input id="fingerprintsCbx" type="checkbox" value=".fingerprints" name="clues"/>
                     Fingerprints
                     <span></span>
                 </label>
             </div>
             <div>
-                <label>
-                    <input type="checkbox" value=".dots" name="clues"/>
+                <label for="dotsCbx">
+                    <input id="dotsCbx" type="checkbox" value=".dots" name="clues"/>
                     D.O.T.S Projector
                     <span></span>
                 </label>
             </div>
             <div>
-                <label>
-                    <input type="checkbox" value=".freezingTemps" name="clues" />
+                <label for="freezingCbx">
+                    <input id="freezingCbx" type="checkbox" value=".freezingTemps" name="clues" />
                     Freezing Temps
                     <span></span>
                 </label>
             </div>
             <div>
-                <label>
-                    <input type="checkbox" value=".orbs" name="clues" />
+                <label for="orbsCbx">
+                    <input id="orbsCbx" type="checkbox" value=".orbs" name="clues" />
                     Ghost Orbs
                     <span></span>
                 </label>
             </div>
             <div>
-                <label>
-                    <input type="checkbox" value=".writing" name="clues" />
+                <label for="writingCbx">
+                    <input id="writingCbx" type="checkbox" value=".writing" name="clues" />
                     Ghost Writing
                     <span></span>
                 </label>
             </div>
             <div>
-                <label>
-                    <input type="checkbox" value=".emf5" name="clues" />
+                <label for="emfCbx">
+                    <input id="emfCbx" type="checkbox" value=".emf5" name="clues" />
                     EMF Level 5
                     <span></span>
                 </label>
             </div>
             <div>
-                <label>
-                    <input type="checkbox" value=".spiritbox" name="clues" />
+                <label for="spiritboxCbx">
+                    <input id="spiritboxCbx" type="checkbox" value=".spiritbox" name="clues" />
                     Spirit Box
                     <span></span>
                 </label>
@@ -92,51 +100,55 @@
 
         </div>
         <div id="huntingSpeedClues">
-            <div class="centerText"><label>Ghost Speed</label></div>
+            <div class="centerText"><label for="speedClues">Ghost Speed</label></div>
             <div class="grid-container">
-                <div class="grid-item"><label>Unknown </label></div><div class="grid-item"><input type="radio" name="clues" value="" checked /><label></label></div>
-                <div class="grid-item"><label>Fast </label></div><div class="grid-item"><input type="radio" name="clues" value=".fastRun" /><label></label></div>
-                <div class="grid-item"><label>Slow </label></div><div class="grid-item"><input type="radio" name="clues" value=".slowRun" /><label></label></div>
-                <div class="grid-item"><label>Variable</label></div><div class="grid-item"><input type="radio" name="clues" value=".variableRun"/><label></label></div>
-                <div class="grid-item"><label class="halfW">Normal </label></div><div class="grid-item"><input type="radio" name="clues" value=".normalRun" /><label></label></div>
+                <div class="grid-item"><label for="unknownHsRb">Unknown </label></div><div class="grid-item"><input id="unknownHsRb" type="radio" name="speedClues" value="" checked /><label></label></div>
+                <div class="grid-item"><label for="fastRB">Fast </label></div><div class="grid-item"><input id="fastRB" type="radio" name="speedClues" value=".fastRun" /><label></label></div>
+                <div class="grid-item"><label for="slowRB">Slow </label></div><div class="grid-item"><input id="slowRB" type="radio" name="speedClues" value=".slowRun" /><label></label></div>
+                <div class="grid-item"><label for="variableRB">Variable</label></div><div class="grid-item"><input id="variableRB" type="radio" name="speedClues" value=".variableRun"/><label></label></div>
+                <div class="grid-item"><label for="normalRB">Normal </label></div><div class="grid-item"><input id="normalRB" type="radio" name="speedClues" value=".normalRun" /><label></label></div>
             </div>
         </div>
         <div id="huntingSanityClues">
-            <div class="centerText"><label>Sanity When Hunted</label></div>
+            <div class="centerText"><label for="sanityClues">Sanity When Hunted</label></div>
             <div class="grid-container">
-                <div class="grid-item"><label>Unknown</label></div>
-                <div class="grid-item"><input type="radio" name="sanityClues" value="" checked /><label></label></div>
+                <div class="grid-item"><label for="unknownSanRB">Unknown</label></div>
+                <div class="grid-item"><input type="radio" id="unknownSanRB" name="sanityClues" value="" checked /><label></label></div>
 
-                <div class="grid-item"><label>87.6 ~ 100</label></div>
-                <div class="grid-item"><input type="radio" name="sanityClues" value=".san100" /><label></label></div>
+                <div class="grid-item"><label for="san100RB">87.6 ~ 100</label></div>
+                <div class="grid-item"><input id="san100RB" type="radio" name="sanityClues" value=".san100" /><label></label></div>
 
-                <div class="grid-item"><label>81 ~ 87.5</label></div>
-                <div class="grid-item"><input type="radio" name="sanityClues" value=".san87_5" /><label></label></div>
+                <div class="grid-item"><label for="san87_5RB">81 ~ 87.5</label></div>
+                <div class="grid-item"><input id="san87_5RB" type="radio" name="sanityClues" value=".san87_5" /><label></label></div>
 
-                <div class="grid-item"><label>76 ~ 80</label></div>
-                <div class="grid-item"><input type="radio" name="sanityClues" value=".san80" /><label></label></div>
+                <div class="grid-item"><label for="san80RB">76 ~ 80</label></div>
+                <div class="grid-item"><input id="san80RB" type="radio" name="sanityClues" value=".san80" /><label></label></div>
 
-                <div class="grid-item"><label>66 ~ 75 </label></div>
-                <div class="grid-item"><input type="radio" name="sanityClues" value=".san75" /><label></label></div>
+                <div class="grid-item"><label for="san75RB">66 ~ 75 </label></div>
+                <div class="grid-item"><input id="san75RB" type="radio" name="sanityClues" value=".san75" /><label></label></div>
 
-                <div class="grid-item"><label>61 ~ 65</label></div>
-                <div class="grid-item"><input type="radio" name="sanityClues" value=".san65" /><label></label></div>
+                <div class="grid-item"><label for="san65RB">61 ~ 65</label></div>
+                <div class="grid-item"><input id="san65RB" type="radio" name="sanityClues" value=".san65" /><label></label></div>
 
-                <div class="grid-item"><label>51 ~ 60</label></div>
-                <div class="grid-item"><input type="radio" name="sanityClues" value=".san60" /><label></label></div>
+                <div class="grid-item"><label for="san60RB">51 ~ 60</label></div>
+                <div class="grid-item"><input id="san60RB" type="radio" name="sanityClues" value=".san60" /><label></label></div>
 
-                <div class="grid-item"><label>41 ~ 50</label></div>
-                <div class="grid-item"><input type="radio" name="sanityClues" value=".san50" /><label></label></div>
+                <div class="grid-item"><label for="san50RB">41 ~ 50</label></div>
+                <div class="grid-item"><input id="san50RB" type="radio" name="sanityClues" value=".san50" /><label></label></div>
 
-                <div class="grid-item"><label>36 ~ 40 </label></div>
-                <div class="grid-item"><input type="radio" name="sanityClues" value=".san40" /><label></label></div>
+                <div class="grid-item"><label for="san40RB">36 ~ 40 </label></div>
+                <div class="grid-item"><input id="san40RB" type="radio" name="sanityClues" value=".san40" /><label></label></div>
 
-                <div class="grid-item"><label>12.6 ~ 35 </label></div>
-                <div class="grid-item"><input type="radio" name="sanityClues" value=".san35" /><label></label></div>
+                <div class="grid-item"><label for="san35RB">12.6 ~ 35 </label></div>
+                <div class="grid-item"><input id="san35RB" type="radio" name="sanityClues" value=".san35" /><label></label></div>
 
-                <div class="grid-item"><label>0 ~ 12.5</label></div>
-                <div class="grid-item"><input type="radio" name="sanityClues" value=".san12_5" /><label></label></div>
+                <div class="grid-item"><label for="san12_5RB">0 ~ 12.5</label></div>
+                <div class="grid-item"><input id="san12_5RB" type="radio" name="sanityClues" value=".san12_5" /><label></label></div>
             </div>
+        </div>
+        <div id="matchingGhostsListDiv">
+            <label for="matchingGhostsList"></label>
+            <ul id="matchingGhostsList"></ul>
         </div>
     </div>
     <div id="ghosts">
@@ -381,6 +393,7 @@
     function CheckEvidence(){
         let evidencecbList = Array.from(document.querySelectorAll('input[name="clues"]:checked'));
         evidencecbList.push(...Array.from(document.querySelectorAll('input[name="sanityClues"]:checked')));
+        evidencecbList.push(...Array.from(document.querySelectorAll('input[name="speedClues"]:checked')));
         let evidenceClassList = "";
         evidencecbList.map((ele) => evidenceClassList += ele.value);
         console.log(`EvidenceList: ${evidenceClassList}`);
@@ -401,24 +414,65 @@
         DisplayEvidenceCounts();
     }
 
+    let inputs = Array.from(document.querySelectorAll('input[name="clues"]'));
+    inputs.push(...Array.from(document.querySelectorAll('input[name="sanityClues"]')));
+    inputs.push(...Array.from(document.querySelectorAll('input[name="speedClues"]')));
+
+    let ghostDivs = Array.from(document.querySelectorAll('.ghost'));
+    let mGList = document.getElementById("matchingGhostsList");
+    let mGListLabel = document.querySelector(`label[for="matchingGhostsList"]`);
+
     function DisplayEvidenceCounts(){
-        let cbxes = Array.from(document.querySelectorAll('input[name="clues"]'));
-        cbxes.push(...Array.from(document.querySelectorAll('input[name="sanityClues"]')));
-        cbxes.forEach( (cbx) => {
+        inputs.forEach( (cbx) => {
             let ghostCount = 
                 cbx.value == "" ? 
-                    Array.from(document.querySelectorAll('.ghost')).filter((ele) => ele.style.display != "none").length 
+                    ghostDivs.filter((ele) => ele.style.display != "none").length 
                     : 
                     Array.from(document.querySelectorAll(cbx.value)).filter((ele) => ele.style.display != "none").length;
             cbx.nextElementSibling.textContent = `: ${ghostCount} Ghosts`;
         });
     }
-    let clues = Array.from(document.querySelectorAll('input[name="clues"]'));
-    clues.push(...Array.from(document.querySelectorAll('input[name="sanityClues"]')));
-    clues.forEach((ele) => {
-        ele.addEventListener('change', CheckEvidence);
-    });
+    
+    function MarkMatching(ele){
+        ClearMatchingList();
+        result = "";
+        if(ele.value != ""){
+            document.querySelectorAll('.ghost').forEach((element) => {
+                console.log(`removing "matches"`);
+                element.classList.remove("matches");
+                element.classList.add("regularBackground");
+            })
+            mGListLabel.textContent = `${document.querySelector(`label[for="${ele.getAttribute("name")}"`).textContent}: ${document.querySelector(`label[for="${ele.id}"]`).textContent}`;
+            Array.from(document.querySelectorAll(`.ghost${ele.value}`)).filter((div) => div.style.display != "none").forEach((element) => {
+                console.log(`adding "matches" to ${element.id}`);
+                result += `<li>${element.firstElementChild.textContent}</li>`
+                element.classList.remove("regularBackground");
+                element.classList.add("matches");
+            });
+            mGList.innerHTML = result;
+        }
+    }
 
+    function ClearMatchingList(){
+        mGList.innerHTML = "";
+        mGListLabel.textContent = "";
+    }
+    
+    ghostDivs.forEach((ele) => ele.classList.add("regularBackground"));
+
+    inputs.forEach( (ele) => ele.addEventListener('mouseover', (event)=> {MarkMatching(ele);} ));
+
+    inputs.forEach((ele) => {
+        ele.addEventListener('change', (event) => {
+            CheckEvidence(); 
+            if (event.target.checked)
+            {
+                MarkMatching(event.target);
+            }
+            else{
+                ClearMatchingList();
+            }});
+    });
     CheckEvidence();
 </script>
 </html>
