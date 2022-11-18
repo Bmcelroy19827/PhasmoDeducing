@@ -94,6 +94,7 @@
         <div id="huntingSpeedClues">
             <div class="centerText"><label>Ghost Speed</label></div>
             <div class="grid-container">
+                <div class="grid-item"><label>Unknown </label></div><div class="grid-item"><input type="radio" name="clues" value="" checked /><label></label></div>
                 <div class="grid-item"><label>Fast </label></div><div class="grid-item"><input type="radio" name="clues" value=".fastRun" /><label></label></div>
                 <div class="grid-item"><label>Slow </label></div><div class="grid-item"><input type="radio" name="clues" value=".slowRun" /><label></label></div>
                 <div class="grid-item"><label>Variable</label></div><div class="grid-item"><input type="radio" name="clues" value=".variableRun"/><label></label></div>
@@ -103,6 +104,9 @@
         <div id="huntingSanityClues">
             <div class="centerText"><label>Sanity When Hunted</label></div>
             <div class="grid-container">
+                <div class="grid-item"><label>Unknown</label></div>
+                <div class="grid-item"><input type="radio" name="sanityClues" value="" checked /><label></label></div>
+
                 <div class="grid-item"><label>87.6 ~ 100</label></div>
                 <div class="grid-item"><input type="radio" name="sanityClues" value=".san100" /><label></label></div>
 
@@ -136,7 +140,7 @@
         </div>
     </div>
     <div id="ghosts">
-        <div id="bansheeDiv" class="dots orbs fingerprints normalRun san87_5 san80 san75 san65 san60 san50 san40 san35 san12_5">
+        <div id="bansheeDiv" class="ghost dots orbs fingerprints normalRun san87_5 san80 san75 san65 san60 san50 san40 san35 san12_5">
             <label>Banshee</label>
             <ul>
                 <li><label>DOTS</label></li>
@@ -145,7 +149,7 @@
                 <li><label>87.5 - 12.5 hunt - uses target's sanity, not the team average</label></li>                
             </ul>
         </div>
-        <div id="demonDiv" class="writing freezingTemps fingerprints normalRun san100 san87_5 san80 san75 san65 san60 san50 san40 san35 san12_5">
+        <div id="demonDiv" class="ghost writing freezingTemps fingerprints normalRun san100 san87_5 san80 san75 san65 san60 san50 san40 san35 san12_5">
             <label>Demon</label>
             <ul>
                 <li><label>Ghost Writing</label></li>
@@ -156,7 +160,7 @@
                 <li><label>hunt cooldown 20 seconds (25 seconds is standard)</label></li>            
             </ul>
         </div>
-        <div id="deogenDiv" class="dots writing spiritbox variableRun fastRun slowRun san50 san40 san35 san12_5">
+        <div id="deogenDiv" class="ghost dots writing spiritbox variableRun fastRun slowRun san50 san40 san35 san12_5">
             <label>Deogen</label>
             <ul>
                 <li><label>Spirit Box: Forced</label></li>
@@ -165,7 +169,7 @@
                 <li><label>Ghost is really fast when far away and extremely slow when it gets close: Will always find its victim</label></li>
             </ul>
         </div>
-        <div id="hantuDiv" class="orbs fingerprints freezingTemps variableRun slowRun fastRun san50 san40 san35 san12_5">
+        <div id="hantuDiv" class="ghost orbs fingerprints freezingTemps variableRun slowRun fastRun san50 san40 san35 san12_5">
             <label>Hantu</label>
             <ul>
                 <li><label>Freezing Temps: Forced</label></li>
@@ -174,7 +178,7 @@
                 <li><label>Faster in colder climates (when fusebox is off) and does not gain speed when it has line of sight to a player</label></li>
             </ul>
         </div>
-        <div id="goryoDiv" class="dots emf5 fingerprints normalRun san50 san40 san35 san12_5">
+        <div id="goryoDiv" class="ghost dots emf5 fingerprints normalRun san50 san40 san35 san12_5">
             <label>Goryo</label>
             <ul>
                 <li><label>Dots: Forced</label></li>
@@ -183,7 +187,7 @@
                 <li><label>Fingerprints</label></li>
             </ul>                      
         </div>
-        <div id="jinnDiv" class="fingerprints emf5 freezingTemps variableRun fastRun normalRun san50 san40 san35 san12_5">
+        <div id="jinnDiv" class="ghost fingerprints emf5 freezingTemps variableRun fastRun normalRun san50 san40 san35 san12_5">
             <label>Jinn</label>
             <ul>
                 <li><label>Fingerprints</label></li>
@@ -193,7 +197,7 @@
                 <li><label>If Jinn gains line of sight and fusebox is turned on it can gain speed until withint 3 meteres of the player</label></li>
             </ul>
         </div>
-        <div id="mareDiv" class="orbs writing spiritbox normalRun san60 san50 san40 san35 san12_5">
+        <div id="mareDiv" class="ghost orbs writing spiritbox normalRun san60 san50 san40 san35 san12_5">
             <label>Mare</label>
             <ul>
                 <li><label>Ghost Orbs</label></li>
@@ -204,7 +208,7 @@
                 
             </ul>
         </div>
-        <div id="moroiDiv" class="writing freezingTemps spiritbox variableRun normalRun fastRun san50 san40 san35 san12_5">
+        <div id="moroiDiv" class="ghost writing freezingTemps spiritbox variableRun normalRun fastRun san50 san40 san35 san12_5">
             <label>Moroi</label>
             <ul>
                 <li>Spirit Box: Forced</li>
@@ -214,7 +218,7 @@
                 <li><label>Gets faster as the average sanity goes below 45%</label></li>
             </ul>
         </div>
-        <div id="mylingDiv" class="writing emf5 fingerprints normalRun san50 san40 san35 san12_5">
+        <div id="mylingDiv" class="ghost writing emf5 fingerprints normalRun san50 san40 san35 san12_5">
             <label>Myling</label>
             <ul>
                 <li><label>Ghost Writing</label></li>
@@ -222,7 +226,7 @@
                 <li><label>Fingerprints</label></li>
             </ul>
         </div>
-        <div id="obakeDiv" class="fingerprints emf5 orbs normalRun san50 san40 san35 san12_5">
+        <div id="obakeDiv" class="ghost fingerprints emf5 orbs normalRun san50 san40 san35 san12_5">
             <label>Obake</label>
             <ul>
                 <li><label>FingerPrints: Forced</label></li>
@@ -232,7 +236,7 @@
                 <li><label>75% chance to leave fingerprints</label></li>
             </ul>           
         </div>
-        <div id="oniDiv" class="dots emf5 freezingTemps normalRun san50 san40 san35 san12_5">
+        <div id="oniDiv" class="ghost dots emf5 freezingTemps normalRun san50 san40 san35 san12_5">
             <label>Oni</label>
             <ul>
                 <li><label>DOTS</label></li>
@@ -241,7 +245,7 @@
                 <li><label>Flashes visible longer than other ghosts during hunts</label></li>
             </ul>
         </div>
-        <div id="onryoDiv" class="orbs freezingTemps spiritbox normalRun san100 san87_5 san80 san75 san65 san60 san50 san40 san35 san12_5">
+        <div id="onryoDiv" class="ghost orbs freezingTemps spiritbox normalRun san100 san87_5 san80 san75 san65 san60 san50 san40 san35 san12_5">
             <label>Onryo</label>
             <ul>
                 <li><label>Ghost Orbs</label></li>
@@ -253,7 +257,7 @@
                 
             </ul>
         </div>
-        <div id="phantomDiv" class="dots fingerprints spiritbox normalRun san50 san40 san35 san12_5">
+        <div id="phantomDiv" class="ghost dots fingerprints spiritbox normalRun san50 san40 san35 san12_5">
             <label>Phantom</label>
             <ul>
                 <li><label>DOTS</label></li>
@@ -263,7 +267,7 @@
                 <li><label>During a hunt it is invisible more often (flicker is 1-2 seconds compared to 0.3-1 second base)</label></li>
             </ul>
         </div>
-        <div id="poltergeistDiv" class="fingerprints writing spiritbox normalRun san50 san40 san35 san12_5">
+        <div id="poltergeistDiv" class="ghost fingerprints writing spiritbox normalRun san50 san40 san35 san12_5">
             <label>Poltergeist</label>
             <ul>
                 <li><label>Fingerprints</label></li>
@@ -272,7 +276,7 @@
                 <li><label>Thrown items lower sanity whether the player sees it or not</label></li>
             </ul>
         </div>
-        <div id="raijuDiv" class="dots orbs emf5 variableRun fastRun san65 san60 san50 san40 san35 san12_5">
+        <div id="raijuDiv" class="ghost dots orbs emf5 variableRun fastRun san65 san60 san50 san40 san35 san12_5">
             <label>Raiju</label>
             <ul>
                 <li><label>DOTS</label></li>
@@ -282,7 +286,7 @@
                 <li><label>If near one piece of active electrical equipment sanity threshold is 65%. Otherwise normal 50%</label></li>
             </ul>
         </div>
-        <div id="revenantDiv" class="orbs writing freezingTemps variableRun slowRun fastRun san50 san40 san35 san12_5">
+        <div id="revenantDiv" class="ghost orbs writing freezingTemps variableRun slowRun fastRun san50 san40 san35 san12_5">
             <label>Revenant</label>
             <ul>
                 <li><label>Ghost Orbs</label></li>
@@ -291,7 +295,7 @@
                 <li><label>Hunting: Slow(1 m/s) if not line of sight and almost double normal speed (3 m/s - triple its own non-LOS speed) when it has line of sight</label></li>
             </ul>
         </div>
-        <div id="shadeDiv" class="writing emf5 freezingTemps normalRun san35 san12_5">
+        <div id="shadeDiv" class="ghost writing emf5 freezingTemps normalRun san35 san12_5">
             <label>Shade</label>
             <ul>
                 <li><label>Ghost Writing</label></li>
@@ -301,7 +305,7 @@
                 
             </ul>
         </div>
-        <div id="spiritDiv" class="writing emf5 spiritbox normalRun san50 san40 san35 san12_5">
+        <div id="spiritDiv" class="ghost writing emf5 spiritbox normalRun san50 san40 san35 san12_5">
             <label>Spirit</label>
             <ul>
                 <li><label>Ghost Writing</label></li>
@@ -310,7 +314,7 @@
                 <li><label>Smudge last 180seconds (before hunt)</label></li>
             </ul>
         </div>
-        <div id="thayeDiv" class="dots orbs writing variableRun fastRun slowRun normalRun san75 san65 san60 san50 san40 san35 san12_5">
+        <div id="thayeDiv" class="ghost dots orbs writing variableRun fastRun slowRun normalRun san75 san65 san60 san50 san40 san35 san12_5">
             <label>Thaye</label>
             <ul>
                 <li><label>DOTS</label></li>
@@ -321,7 +325,7 @@
                 <li><label>Does not speed up with LOS to player</label></li>
             </ul>
         </div>
-        <div id="mimicDiv" class="orbs fingerprints freezingTemps spiritbox variableRun normalRun slowRun fastRun san100 san87_5 san80 san75 san65 san60 san50 san40 san35 san12_5">
+        <div id="mimicDiv" class="ghost orbs fingerprints freezingTemps spiritbox variableRun normalRun slowRun fastRun san100 san87_5 san80 san75 san65 san60 san50 san40 san35 san12_5">
             <label>Mimic</label>
             <ul>
                 <li><label>Orbs: Forced, false evidence (always present even in no-evidence run)</label></li>
@@ -332,7 +336,7 @@
                 <li><label>hunting threshold dependent on what it's mimicking</label></li>                
             </ul>
         </div>
-        <div id="twinsDiv" class="emf5 freezingTemps spiritbox variableRun slowRun fastRun san50 san40 san35 san12_5">
+        <div id="twinsDiv" class="ghost emf5 freezingTemps spiritbox variableRun slowRun fastRun san50 san40 san35 san12_5">
             <label>Twins</label>
             <ul>
                 <li><label>EMF 5</label></li>
@@ -341,7 +345,7 @@
                 <li><label>Hunt speed depends on if the ghost starts from present location or near the last interaction it had when it used its ability. Slight difference in speeds (1.5 vs 1.9)</label></li>
             </ul>
         </div>
-        <div id="wraithDiv" class="dots emf5 spiritbox normalRun san50 san40 san35 san12_5">
+        <div id="wraithDiv" class="ghost dots emf5 spiritbox normalRun san50 san40 san35 san12_5">
             <label>Wraith</label>
             <ul>
                 <li><label>DOTS</label></li>
@@ -351,7 +355,7 @@
                 <li><label>May teleport within 3 meters of a random player, generating EMF 2 with a 25% of EMF 5 at the location it teleported</label></li>
             </ul>
         </div>
-        <div id="yokaiDiv" class="dots orbs spiritbox normalRun san80 san75 san65 san60 san50 san40 san35 san12_5">
+        <div id="yokaiDiv" class="ghost dots orbs spiritbox normalRun san80 san75 san65 san60 san50 san40 san35 san12_5">
             <label>Yokai</label>
             <ul>
                 <li><label>DOTS</label></li>
@@ -361,7 +365,7 @@
                 <li><label>During hunts can only hear players or sense handheld active electronics withint 2.5 meters (can stand in different room with doors closed and it will not sense you)</label></li>
             </ul>
         </div>
-        <div id="yureiDiv" class="dots orbs freezingTemps normalRun san50 san40 san35 san12_5">
+        <div id="yureiDiv" class="ghost dots orbs freezingTemps normalRun san50 san40 san35 san12_5">
             <label>Yurei</label>
             <ul>
                 <li><label>DOTS</label></li>
@@ -401,7 +405,11 @@
         let cbxes = Array.from(document.querySelectorAll('input[name="clues"]'));
         cbxes.push(...Array.from(document.querySelectorAll('input[name="sanityClues"]')));
         cbxes.forEach( (cbx) => {
-            let ghostCount = Array.from(document.querySelectorAll(cbx.value)).filter((ele) => ele.style.display != "none").length;
+            let ghostCount = 
+                cbx.value == "" ? 
+                    Array.from(document.querySelectorAll('.ghost')).filter((ele) => ele.style.display != "none").length 
+                    : 
+                    Array.from(document.querySelectorAll(cbx.value)).filter((ele) => ele.style.display != "none").length;
             cbx.nextElementSibling.textContent = `: ${ghostCount} Ghosts`;
         });
     }
