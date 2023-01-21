@@ -30,6 +30,10 @@
             padding: 3px;
             background-color: blueviolet;
         }
+        .flex-row {
+            display: flex;
+            flex-direction: row;
+        }
         .grid-container{
             display: grid;
             grid-template-columns: auto auto;
@@ -168,8 +172,16 @@
         <div id="matchingGhostsListDiv">
             <label for="manuallyHiddenGhostsList">Hidden Ghosts (those matching evidence are in red)</label>
             <ul id="manuallyHiddenGhostsList"></ul>
-            <label for="matchingGhostsList"></label>
-            <ul id="matchingGhostsList"></ul>
+            <div class="flex-row">
+                <div>
+                    <label for="matchingGhostsList"></label>
+                    <ul id="matchingGhostsList"></ul>
+                </div>
+                <div style="margin-top: 1em;">
+                    <ul id="matchingGhostsList2"></ul>
+                </div>
+            </div>
+            
         </div>
     </div>
     <div id="ghosts">
@@ -631,6 +643,7 @@
 
     let ghostDivs = Array.from(document.querySelectorAll('.ghost'));
     let mGList = document.getElementById("matchingGhostsList");
+    let mGList2 = document.getElementById("matchingGhostsList2");
     let mGListLabel = document.querySelector(`label[for="matchingGhostsList"]`);
     let hGList = document.getElementById("manuallyHiddenGhostsList");
 
@@ -661,16 +674,19 @@
     
     function MarkMatching(ele){
         ClearMatchingList();
-        result = "";
+        result = ["", ""];
         if(ele.value != ""){
             mGListLabel.textContent = `${document.querySelector(`label[for="${ele.getAttribute("name")}"`).textContent}: ${document.querySelector(`label[for="${ele.id}"]`).textContent}`;
+            let counter = 0;
             Array.from(document.querySelectorAll(`.ghost${ele.value}`)).filter((div) => div.style.display != "none").forEach((element) => {
-                console.log(`adding "matches" to ${element.id}`);
-                result += `<li>${element.firstElementChild.textContent}</li>`
+                //console.log(`adding "matches" to ${element.id}`);
+                result[counter % 2] += `<li>${element.firstElementChild.textContent}</li>`
+                counter++;
                 element.classList.remove("regularBackground");
                 element.classList.add("matches");
             });
-            mGList.innerHTML = result;
+            mGList.innerHTML = result[0];
+            mGList2.innerHTML = result[1];
         }
     }
 
@@ -678,7 +694,7 @@
         mGList.innerHTML = "";
         mGListLabel.textContent = "";
         document.querySelectorAll('.ghost').forEach((element) => {
-            console.log(`removing "matches"`);
+            //console.log(`removing "matches"`);
             element.classList.remove("matches");
             element.classList.add("regularBackground");
         });
@@ -686,7 +702,7 @@
 
     function UnhideManually(event){
         let divs = document.querySelectorAll('.force-hide');
-        console.log(`Unhiding\n\tdivs length: ${divs.length}`, divs);
+        //console.log(`Unhiding\n\tdivs length: ${divs.length}`, divs);
         if(divs.length > 0){
             divs.forEach((ele) => {
                 ele.classList.remove("force-hide");
