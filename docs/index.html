@@ -52,11 +52,15 @@
         .force-hide{
             /* used to hide a ghost until reset */
         }
+        .margin-right-2em {
+            margin-right: 2em;
+        }
     </style>
 </head>
 <body>
     <div>
-        <p class="white-text">Right click a ghost card to manually hide it. <button onclick="UnhideManually()">Unhide Ghosts</button></p>
+        <p class="white-text">Right click a ghost card to manually hide it. Hover over an evidence radio button or checkbox to populate list to right of possible ghosts and highlight ghost cards.</p>
+        <p><button class="margin-right-2em onclick="UnhideManually()">Unhide Ghosts</button><button class="margin-right-2em" onclick="ResetDocument()">Reset Page</button></p>
     </div>
     <div id="clues">
         <div id="standardClues">
@@ -714,6 +718,10 @@
                 ClearMatchingList();
             }});
     });
+
+    function ResetDocument(){
+        location.reload();
+    }
     CheckEvidence();
 </script>
 </html>
