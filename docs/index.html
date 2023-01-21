@@ -46,6 +46,9 @@
         .important{
             color: red;
         }
+        .white-text {
+            color: white;
+        }
         .force-hide{
             /* used to hide a ghost until reset */
         }
@@ -53,7 +56,7 @@
 </head>
 <body>
     <div>
-        <p>Right click a ghost card to manually hide it. <button onclick="UnhideManually()">Unhide Ghosts</button></p>
+        <p class="white-text">Right click a ghost card to manually hide it. <button onclick="UnhideManually()">Unhide Ghosts</button></p>
     </div>
     <div id="clues">
         <div id="standardClues">
@@ -133,11 +136,11 @@
                 <div class="grid-item"><label for="san87_5RB">81 ~ 87.5</label></div>
                 <div class="grid-item"><input id="san87_5RB" type="radio" name="sanityClues" value=".san87_5" /><label></label></div>
 
-                <div class="grid-item"><label for="san80RB">76 ~ 80</label></div>
+                <div class="grid-item"><label for="san80RB">71 ~ 80</label></div>
                 <div class="grid-item"><input id="san80RB" type="radio" name="sanityClues" value=".san80" /><label></label></div>
 
-                <div class="grid-item"><label for="san75RB">66 ~ 75 </label></div>
-                <div class="grid-item"><input id="san75RB" type="radio" name="sanityClues" value=".san75" /><label></label></div>
+                <div class="grid-item"><label for="san70RB">66 ~ 70 </label></div>
+                <div class="grid-item"><input id="san70RB" type="radio" name="sanityClues" value=".san70" /><label></label></div>
 
                 <div class="grid-item"><label for="san65RB">61 ~ 65</label></div>
                 <div class="grid-item"><input id="san65RB" type="radio" name="sanityClues" value=".san65" /><label></label></div>
@@ -166,7 +169,7 @@
         </div>
     </div>
     <div id="ghosts">
-        <div id="bansheeDiv" class="ghost dots orbs fingerprints normalRun san87_5 san80 san75 san65 san60 san50 san40 san35 san12_5">
+        <div id="bansheeDiv" class="ghost dots orbs fingerprints normalRun san87_5 san80 san70 san65 san60 san50 san40 san35 san12_5">
             <label>Banshee</label>
             <ul>
                 <li><label>DOTS</label></li>
@@ -186,7 +189,7 @@
                                 
             </ul>
         </div>
-        <div id="demonDiv" class="ghost writing freezingTemps fingerprints normalRun san100 san87_5 san80 san75 san65 san60 san50 san40 san35 san12_5">
+        <div id="demonDiv" class="ghost writing freezingTemps fingerprints normalRun san100 san87_5 san80 san70 san65 san60 san50 san40 san35 san12_5">
             <label>Demon</label>
             <ul>
                 <li><label>Ghost Writing</label></li>
@@ -363,7 +366,7 @@
                 </li>                  
             </ul>
         </div>
-        <div id="onryoDiv" class="ghost orbs freezingTemps spiritbox normalRun san100 san87_5 san80 san75 san65 san60 san50 san40 san35 san12_5">
+        <div id="onryoDiv" class="ghost orbs freezingTemps spiritbox normalRun san100 san87_5 san80 san70 san65 san60 san50 san40 san35 san12_5">
             <label>Onryo</label>
             <ul>
                 <li><label>Ghost Orbs</label></li>
@@ -484,7 +487,7 @@
                 </li>
             </ul>
         </div>
-        <div id="thayeDiv" class="ghost dots orbs writing variableRun fastRun slowRun normalRun san75 san65 san60 san50 san40 san35 san12_5">
+        <div id="thayeDiv" class="ghost dots orbs writing variableRun fastRun slowRun normalRun san70 san65 san60 san50 san40 san35 san12_5">
             <label>Thaye</label>
             <ul>
                 <li><label>DOTS</label></li>
@@ -500,7 +503,7 @@
                 </li>
             </ul>
         </div>
-        <div id="mimicDiv" class="ghost orbs fingerprints freezingTemps spiritbox variableRun normalRun slowRun fastRun san100 san87_5 san80 san75 san65 san60 san50 san40 san35 san12_5">
+        <div id="mimicDiv" class="ghost orbs fingerprints freezingTemps spiritbox variableRun normalRun slowRun fastRun san100 san87_5 san80 san70 san65 san60 san50 san40 san35 san12_5">
             <label>Mimic</label>
             <ul>
                 <li><label class="important">Orbs: Forced, false evidence (always present even in no-evidence run)</label></li>
@@ -514,8 +517,6 @@
                         <li><label>Can't switch picked ghost during a hunt</label></li>
                         <li><label>Can copy evidences as long as it leaves them itself (it can leave obake looking fingerprints)</label></li>
                         <li><label>hunting threshold dependent on what it's mimicking</label></li> 
-                        <li><label></label></li>
-                        <li><label></label></li>
                     </ul>
                 </li>              
             </ul>
@@ -556,7 +557,7 @@
                 </li>
             </ul>
         </div>
-        <div id="yokaiDiv" class="ghost dots orbs spiritbox normalRun san80 san75 san65 san60 san50 san40 san35 san12_5">
+        <div id="yokaiDiv" class="ghost dots orbs spiritbox normalRun san80 san70 san65 san60 san50 san40 san35 san12_5">
             <label>Yokai</label>
             <ul>
                 <li><label>DOTS</label></li>
